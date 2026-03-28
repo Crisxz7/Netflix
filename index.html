@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quem está assistindo?</h1>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar modo claro/escuro" title="Alternar tema">🌙</button>
+    </header>
+
+    <main>
+        <section aria-label="Perfis disponíveis">
+            <ul class="profiles" aria-label="Lista de perfis">
+                <li class="profile-item">
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Vanessa, clique para acessar">
+                    <figure>
+                        <img src="assents/perfil-1.jpg" alt="Uma mulher de cabelos longos e um vestido antigo.">
+                        <figcaption>Vanessa</figcaption>
+                    </figure>
+                </li>
+                <li class="profile-item">
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Thiago, clique para acessar">
+                    <figure>
+                        <img src="assents/perfil-2.jpg" alt="Um homem de cabelos curtos e barba, com um terno elegante antigo.">
+                        <figcaption>Thiago</figcaption>
+                    </figure>
+                </li>
+                <li class="profile-item">
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Ana, clique para acessar">
+                    <figure>
+                        <img src="assents/perfil-3.jpg" alt="Uma mulher de tranças e um vestido antigo.">
+                        <figcaption>Ana</figcaption>
+                    </figure>
+                </li>
+                <li class="profile-item">
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Vitória, clique para acessar">
+                    <figure>
+                        <img src="assents/perfil-4.jpg" alt="Uma senhora de cabelos brancos e um vestido antigo.">
+                        <figcaption>Vitória</figcaption>
+                    </figure>
+                </li>
+            </ul>
+
+        </section>
+        <section class="gerenciar">
+            <button type="button" class="botao-gerenciar">Gerenciar perfis</button>
+        </section>
+
+    </main>
+
+    <script src="theme.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

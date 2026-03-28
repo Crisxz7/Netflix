@@ -1,0 +1,188 @@
+/* Reset básico */
+* {
+    margin: 0; /* Remove todas as margens padrão */
+    padding: 0; /* Remove todos os preenchimentos padrão */
+    box-sizing: border-box; /* Faz com que width e height incluam bordas e padding */
+}
+
+/* Corpo da página */
+body {
+    background: linear-gradient(to bottom, #141414, #000); /* Define um fundo gradiente de preto escuro para preto */
+    color: white; /* Define a cor do texto como branco */
+    font-family: Arial, sans-serif; /* Define a família de fontes como Arial ou sans-serif */
+    min-height: 100vh; /* Define a altura mínima como 100% da viewport */
+    display: flex; /* Define o display como flex para layout flexível */
+    flex-direction: column; /* Define a direção flex como coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    padding: 16px; /* Adiciona preenchimento de 16px */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 30px; /* Adiciona margem inferior de 30px */
+    width: 100%; /* Ocupa toda a largura */
+    position: relative; /* Posicionamento relativo para o botão */
+}
+
+h1 {
+    font-size: 2rem; /* Define o tamanho da fonte como 2rem */
+    font-weight: bold; /* Define o peso da fonte como negrito */
+}
+
+/* Seção de perfis */
+.profiles {
+    list-style: none; /* Remove o marcador padrão das listas */
+    padding: 0; /* Remove o padding padrão da lista */
+    margin: 0; /* Remove a margem padrão da lista */
+    display: flex; /* Define o display como flex para layout flexível */
+    gap: 20px; /* Define o espaço entre os itens como 20px */
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+/* Cada perfil */
+.profile-item {
+    display: flex; /* Perfil em flex para alinhamento */
+    flex-direction: column; /* Conteúdo em coluna dentro do item */
+    align-items: center; /* Alinha o conteúdo ao centro */
+    cursor: pointer; /* Cursor de clique */
+    transition: transform 0.2s ease; /* Transição do hover */
+}
+
+.profile-item:hover {
+    transform: scale(1.04); /* Traz leve zoom no hover */
+}
+
+/* Imagem do perfil */
+.profile-item img {
+    width: 120px; /* Imagem quadrada compacta */
+    height: 120px; /* Imagem quadrada compacta */
+    object-fit: cover; /* Ajuste de corte para caber no box */
+    border: 2px solid transparent; /* Borda inicial invisível */
+    transition: border-color 0.2s ease; /* Animação de borda */
+}
+
+.profile-item:hover img {
+    border-color: white; /* Borda branca ao passar o mouse */
+}
+
+.profile-item figcaption {
+    margin-top: 8px; /* Espaçamento entre imagem e texto */
+    font-size: 1rem; /* Texto pequeno */
+    text-align: center; /* Centrar texto */
+}
+
+/* Linha horizontal para desktop */
+.profiles {
+    flex-direction: row; /* Garante que os perfis fiquem em linha */
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem; /* Título menor em tablets */
+    }
+
+    .profiles {
+        gap: 16px; /* Menos espaçamento entre perfis */
+    }
+
+    .profile img {
+        width: 110px; /* Imagens um pouco menores */
+        height: 110px;
+    }
+
+    .profile figcaption {
+        font-size: 0.95rem; /* Texto levemente menor */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px; /* Menos padding em dispositivos pequenos */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Título ainda menor em celulares */
+    }
+
+    .profiles {
+        gap: 12px; /* Espaçamento menor em celulares */
+    }
+
+    .profile-item img {
+        width: 90px; /* Imagens pequenas para celular */
+        height: 90px;
+    }
+
+    .profile-item figcaption {
+        font-size: 0.9rem; /* Texto menor em celular */
+    }
+}
+
+/* Container do header */
+.header-container {
+    display: flex; /* Layout flexível para header */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 20px; /* Espaço entre h1 e botão */
+    position: relative; /* Posicionamento relativo */
+}
+
+/* Botão de alternância de tema */
+.theme-toggle {
+    background: transparent; /* Sem fundo */
+    border: none; /* Sem borda */
+    font-size: 1.8rem; /* Tamanho do emoji */
+    cursor: pointer; /* Cursor de clique */
+    transition: transform 0.3s ease; /* Animação ao clicar */
+    padding: 8px 12px; /* Espaçamento interno */
+    border-radius: 50%; /* Botão circular */
+    position: fixed; /* Posicionamento fixo na viewport */
+    top: 16px; /* Distância do topo */
+    right: 16px; /* Canto superior direito */
+    z-index: 1000; /* Camada acima de tudo */
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2); /* Aumenta no hover */
+}
+
+/* Tema claro */
+html[data-theme="light"] body {
+    background: linear-gradient(to bottom, #f5f5f5, #ffffff) !important; /* Fundo claro */
+    color: #333333 !important; /* Texto escuro */
+}
+
+html[data-theme="light"] h1 {
+    color: #333333 !important; /* Título escuro */
+}
+
+html[data-theme="light"] .profile-item figcaption {
+    color: #333333 !important; /* Legenda escura */
+}
+
+html[data-theme="light"] .profile-item:hover img {
+    border-color: #333333 !important; /* Borda escura no hover */
+}
+
+/* Tema escuro (padrão) */
+html[data-theme="dark"] body {
+    background: linear-gradient(to bottom, #141414, #000) !important; /* Fundo escuro */
+    color: white !important; /* Texto branco */
+}
+
+html[data-theme="dark"] h1 {
+    color: white !important; /* Título branco */
+}
+
+html[data-theme="dark"] .profile-item figcaption {
+    color: white !important; /* Legenda branca */
+}
+
+html[data-theme="dark"] .profile-item:hover img {
+    border-color: white !important; /* Borda branca no hover */
+}
