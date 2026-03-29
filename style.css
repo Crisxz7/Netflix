@@ -74,6 +74,29 @@ h1 {
     text-align: center; /* Centrar texto */
 }
 
+/* Links dos perfis */
+.profile-item a {
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: inherit; /* Herda a cor do texto */
+}
+
+/* Botão gerenciar perfis */
+.botao-gerenciar {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    outline: none; /* Remove o outline padrão do focus */
+}
+
+.botao-gerenciar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Linha horizontal para desktop */
 .profiles {
     flex-direction: row; /* Garante que os perfis fiquem em linha */
@@ -98,6 +121,28 @@ h1 {
     .profile figcaption {
         font-size: 0.95rem; /* Texto levemente menor */
     }
+}
+
+/* Seção gerenciar perfis */
+.gerenciar {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botao-gerenciar {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-gerenciar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width: 480px) {
@@ -154,19 +199,24 @@ h1 {
 /* Tema claro */
 html[data-theme="light"] body {
     background: linear-gradient(to bottom, #f5f5f5, #ffffff) !important; /* Fundo claro */
-    color: #333333 !important; /* Texto escuro */
+    color: #000000 !important; /* Texto preto */
 }
 
 html[data-theme="light"] h1 {
-    color: #333333 !important; /* Título escuro */
+    color: #000000 !important; /* Título preto */
 }
 
 html[data-theme="light"] .profile-item figcaption {
-    color: #333333 !important; /* Legenda escura */
+    color: #000000 !important; /* Legenda preta */
 }
 
 html[data-theme="light"] .profile-item:hover img {
-    border-color: #333333 !important; /* Borda escura no hover */
+    border-color: #000000 !important; /* Borda preta no hover */
+}
+
+html[data-theme="light"] .botao-gerenciar {
+    color: #000000 !important; /* Botão preto no modo light */
+    border-color: #000000 !important; /* Borda preta */
 }
 
 /* Tema escuro (padrão) */
