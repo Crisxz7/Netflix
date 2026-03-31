@@ -1,3 +1,28 @@
+// ==========================
+// INTRO COM VÍDEO
+// ==========================
+const intro = document.getElementById("intro");
+const video = document.getElementById("videoIntro");
+
+// se existir vídeo na página
+if (video && intro) {
+
+    // quando o vídeo terminar
+    video.onended = function () {
+        intro.style.display = "none";
+    };
+
+    // 🔊 ativa som ao clicar
+    video.addEventListener("click", () => {
+        video.muted = false;
+        video.play();
+    });
+}
+
+// ==========================
+// TEMA (CLARO/ESCURO)
+// ==========================
+
 // Função para alternar o tema
 function toggleTheme() {
     const htmlElement = document.documentElement;
@@ -14,14 +39,14 @@ function toggleTheme() {
     updateThemeButton(newTheme);
 }
 
-// Função para atualizar o rótulo do botão
+// Função para atualizar o botão
 function updateThemeButton(theme) {
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
     themeToggle.title = theme === 'dark' ? 'Alternar para modo claro' : 'Alternar para modo escuro';
 }
 
-// Detecta o tema atual (dark por padrão) e o tema preferido do sistema
+// Detecta tema do sistema
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const savedTheme = localStorage.getItem('theme');
 const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
@@ -30,7 +55,6 @@ const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 document.documentElement.setAttribute('data-theme', currentTheme);
 updateThemeButton(currentTheme);
 
-// Get do botão e adiciona event listener
+// Evento do botão
 const themeToggle = document.getElementById('theme-toggle');
 themeToggle.addEventListener('click', toggleTheme);
-
