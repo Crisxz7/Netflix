@@ -1,895 +1,893 @@
 :root {
-    --netflix-red: #E50914;
-    --dark-bg: #141414;
-    --text-color: #ffffff;
+    --netflix-red: #E50914; /* Define uma variável de cor vermelha (estilo Netflix) */
+    --dark-bg: #141414; /* Define a cor de fundo escura padrão */
+    --text-color: #ffffff; /* Define a cor padrão dos textos (branco) */
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Remove margem padrão de todos os elementos */
+    padding: 0; /* Remove espaçamento interno padrão */
+    box-sizing: border-box; /* Faz padding e border não aumentarem o tamanho total do elemento */
 }
 
 body {
-    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-color);
-    overflow-x: hidden;
+    font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Define a fonte do site */
+    background-color: var(--dark-bg); /* Usa a cor de fundo definida na variável */
+    color: var(--text-color); /* Usa a cor de texto definida na variável */
+    overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 a {
-    text-decoration: none;
-    color: #e5e5e5;
-    transition: color 0.3s;
+    text-decoration: none; /* Remove o sublinhado dos links */
+    color: #e5e5e5; /* Define a cor dos links */
+    transition: color 0.3s; /* Adiciona animação suave ao mudar cor */
 }
 
 a:hover {
-    color: #b3b3b3;
+    color: #b3b3b3; /* Muda a cor do link quando passa o mouse */
 }
 
 /* Navbar */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 4%;
-    height: 70px;
-    z-index: 1000;
-    background-color: var(--dark-bg);
+    position: fixed; /* Fixa a navbar no topo da tela */
+    top: 0; /* Posiciona no topo */
+    width: 100%; /* Faz ocupar toda a largura */
+    display: flex; /* Usa flexbox */
+    justify-content: space-between; /* Espaça os itens (esquerda e direita) */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 0 4%; /* Espaçamento lateral */
+    height: 70px; /* Altura da navbar */
+    z-index: 1000; /* Define prioridade de sobreposição */
+    background-color: var(--dark-bg); /* Cor de fundo */
 }
 
 .navbar-left,
 .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    display: flex; /* Alinha os itens em linha */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaço entre os itens */
 }
 
 .logo {
-    width: 92px;
-    margin-right: 25px;
-    cursor: pointer;
+    width: 92px; /* Largura da logo */
+    margin-right: 25px; /* Espaço à direita da logo */
+    cursor: pointer; /* Mostra mãozinha ao passar o mouse */
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    font-size: 13px;
+    list-style: none; /* Remove os pontinhos da lista */
+    display: flex; /* Deixa os itens em linha */
+    gap: 20px; /* Espaço entre os links */
+    font-size: 13px; /* Tamanho da fonte */
 }
 
 .nav-links .active {
-    font-weight: bold;
-    color: white;
+    font-weight: bold; /* Deixa o link ativo em negrito */
+    color: white; /* Cor branca */
 }
 
 .icon {
-    font-size: 20px;
-    cursor: pointer;
+    font-size: 20px; /* Tamanho dos ícones */
+    cursor: pointer; /* Mostra cursor de clique */
 }
 
 .kids-link {
-    font-size: 14px;
+    font-size: 14px; /* Tamanho do texto */
 }
 
 .nav-notification {
-    position: relative;
-    cursor: pointer;
+    position: relative; /* Permite posicionar elementos dentro dele */
+    cursor: pointer; /* Cursor de clique */
 }
 
 .notification-badge {
-    position: absolute;
-    top: -5px;
-    right: -8px;
-    background-color: var(--netflix-red);
-    color: white;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    position: absolute; /* Posiciona em relação ao elemento pai */
+    top: -5px; /* Move para cima */
+    right: -8px; /* Move para a direita */
+    background-color: var(--netflix-red); /* Cor de fundo (vermelho) */
+    color: white; /* Cor do texto */
+    font-size: 10px; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    border-radius: 50%; /* Deixa redondo */
+    width: 16px; /* Largura */
+    height: 16px; /* Altura */
+    display: none; /* Inicialmente escondido */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    opacity: 0; /* Invisível */
+    transition: opacity 0.3s ease; /* Animação de aparecer */
 }
 
 .notification-badge.added {
-    background-color: #4cab50;
+    background-color: #4cab50; /* Verde para notificação adicionada */
 }
 
 .notification-badge.removed {
-    background-color: var(--netflix-red);
+    background-color: var(--netflix-red); /* Vermelho para removida */
 }
 
 .notification-badge.recommended {
-    background-color: #2f93ff;
+    background-color: #2f93ff; /* Azul para recomendação */
 }
 
 .notification-badge.active {
-    opacity: 1;
-    animation: badgePulse 0.5s ease;
+    opacity: 1; /* Torna visível */
+    animation: badgePulse 0.5s ease; /* Aplica animação */
 }
 
 @keyframes badgePulse {
     0% {
-        transform: scale(0.5);
-        opacity: 0;
+        transform: scale(0.5); /* Começa pequeno */
+        opacity: 0; /* Invisível */
     }
     50% {
-        transform: scale(1.2);
+        transform: scale(1.2); /* Aumenta */
     }
     100% {
-        transform: scale(1);
-        opacity: 1;
+        transform: scale(1); /* Volta ao tamanho normal */
+        opacity: 1; /* Totalmente visível */
     }
 }
 
 .nav-notification.notification-active i {
-    animation: bellRing 0.6s ease;
+    animation: bellRing 0.6s ease; /* Anima o ícone do sino */
 }
 
 @keyframes bellRing {
     0%, 100% {
-        transform: rotate(0deg);
+        transform: rotate(0deg); /* Posição normal */
     }
     15% {
-        transform: rotate(-15deg);
+        transform: rotate(-15deg); /* Gira pra esquerda */
     }
     30% {
-        transform: rotate(15deg);
+        transform: rotate(15deg); /* Gira pra direita */
     }
     45% {
-        transform: rotate(-15deg);
+        transform: rotate(-15deg); /* Esquerda de novo */
     }
     60% {
-        transform: rotate(15deg);
+        transform: rotate(15deg); /* Direita */
     }
     75% {
-        transform: rotate(-5deg);
+        transform: rotate(-5deg); /* Pequeno movimento */
     }
 }
 
 /* Notification Panel */
 .notification-panel {
-    position: fixed;
-    top: 70px;
-    right: -350px;
-    width: 350px;
-    height: calc(100vh - 70px);
-    background-color: #1a1a1a;
-    border-left: 1px solid #404040;
-    z-index: 9999;
-    transition: right 0.3s ease;
-    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
+    position: fixed; /* Fixa na tela */
+    top: 70px; /* Abaixo da navbar */
+    right: -350px; /* Começa escondido fora da tela */
+    width: 350px; /* Largura do painel */
+    height: calc(100vh - 70px); /* Altura total menos a navbar */
+    background-color: #1a1a1a; /* Fundo escuro */
+    border-left: 1px solid #404040; /* Linha na esquerda */
+    z-index: 9999; /* Fica acima de quase tudo */
+    transition: right 0.3s ease; /* Animação ao abrir */
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.5); /* Sombra lateral */
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza em coluna */
 }
 
 .notification-panel.open {
-    right: 0;
+    right: 0; /* Move para dentro da tela (abre o painel) */
 }
 
 .notification-panel-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #404040;
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Espaço entre itens */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px; /* Espaçamento interno */
+    border-bottom: 1px solid #404040; /* Linha inferior */
 }
 
 .notification-panel-header h3 {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
+    font-size: 18px; /* Tamanho do título */
+    font-weight: 500; /* Peso da fonte */
+    margin: 0; /* Remove margem */
 }
 
 .close-panel {
-    background: none;
-    border: none;
-    color: #b3b3b3;
-    font-size: 20px;
-    cursor: pointer;
-    transition: color 0.3s;
+    background: none; /* Remove fundo */
+    border: none; /* Remove borda */
+    color: #b3b3b3; /* Cor do ícone/botão */
+    font-size: 20px; /* Tamanho */
+    cursor: pointer; /* Cursor de clique */
+    transition: color 0.3s; /* Animação de cor */
 }
 
 .close-panel:hover {
-    color: #ffffff;
+    color: #ffffff; /* Muda a cor do botão de fechar para branco ao passar o mouse */
 }
 
 .notification-panel-content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 0;
+    flex: 1; /* Faz ocupar todo o espaço disponível dentro do painel */
+    overflow-y: auto; /* Ativa rolagem vertical se necessário */
+    padding: 0; /* Remove espaçamento interno */
 }
 
 .notification-panel-content::-webkit-scrollbar {
-    width: 6px;
+    width: 6px; /* Define a largura da barra de rolagem (Chrome/Safari) */
 }
 
 .notification-panel-content::-webkit-scrollbar-track {
-    background: transparent;
+    background: transparent; /* Fundo da barra de rolagem invisível */
 }
 
 .notification-panel-content::-webkit-scrollbar-thumb {
-    background: #404040;
-    border-radius: 3px;
+    background: #404040; /* Cor da parte que desliza */
+    border-radius: 3px; /* Deixa arredondado */
 }
 
 .notification-item {
-    display: flex;
-    gap: 12px;
-    padding: 16px 20px;
-    border-bottom: 1px solid #2a2a2a;
-    transition: background-color 0.2s;
+    display: flex; /* Usa flexbox */
+    gap: 12px; /* Espaço entre ícone e texto */
+    padding: 16px 20px; /* Espaçamento interno */
+    border-bottom: 1px solid #2a2a2a; /* Linha separando notificações */
+    transition: background-color 0.2s; /* Animação ao passar mouse */
 }
 
 .notification-item:hover {
-    background-color: #252525;
+    background-color: #252525; /* Muda o fundo ao passar o mouse */
 }
 
 .notification-item-icon {
-    font-weight: bold;
-    font-size: 18px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    font-weight: bold; /* Ícone em negrito */
+    font-size: 18px; /* Tamanho do ícone */
+    width: 32px; /* Largura */
+    height: 32px; /* Altura */
+    border-radius: 50%; /* Deixa redondo */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza vertical */
+    justify-content: center; /* Centraliza horizontal */
+    flex-shrink: 0; /* Impede o ícone de encolher */
 }
 
 .notification-item.added .notification-item-icon {
-    background-color: rgba(76, 175, 80, 0.2);
-    color: #4cab50;
+    background-color: rgba(76, 175, 80, 0.2); /* Fundo verde claro */
+    color: #4cab50; /* Cor verde (adicionado) */
 }
 
 .notification-item.removed .notification-item-icon {
-    background-color: rgba(229, 9, 20, 0.2);
-    color: var(--netflix-red);
+    background-color: rgba(229, 9, 20, 0.2); /* Fundo vermelho claro */
+    color: var(--netflix-red); /* Vermelho (removido) */
 }
 
 .notification-item.recommended .notification-item-icon {
-    background-color: rgba(48, 133, 255, 0.2);
-    color: #2f93ff;
+    background-color: rgba(48, 133, 255, 0.2); /* Fundo azul claro */
+    color: #2f93ff; /* Azul (recomendado) */
 }
 
 .notification-item-content {
-    flex: 1;
-    min-width: 0;
+    flex: 1; /* Ocupa o restante do espaço */
+    min-width: 0; /* Evita quebrar layout em textos grandes */
 }
 
 .notification-item-title {
-    font-size: 14px;
-    font-weight: 500;
-    color: #e5e5e5;
-    margin: 0 0 4px 0;
-    word-break: break-word;
+    font-size: 14px; /* Tamanho do título */
+    font-weight: 500; /* Peso médio */
+    color: #e5e5e5; /* Cor do texto */
+    margin: 0 0 4px 0; /* Espaço inferior */
+    word-break: break-word; /* Quebra palavras longas */
 }
 
 .notification-item-action {
-    font-size: 12px;
-    color: #b3b3b3;
-    margin: 0 0 4px 0;
+    font-size: 12px; /* Texto menor */
+    color: #b3b3b3; /* Cor cinza */
+    margin: 0 0 4px 0; /* Espaço inferior */
 }
 
 .notification-item-time {
-    font-size: 11px;
-    color: #808080;
+    font-size: 11px; /* Texto bem pequeno */
+    color: #808080; /* Cinza mais claro */
 }
 
 .no-notifications {
-    text-align: center;
-    color: #808080;
-    padding: 40px 20px;
-    font-size: 14px;
+    text-align: center; /* Centraliza texto */
+    color: #808080; /* Cor cinza */
+    padding: 40px 20px; /* Espaçamento interno */
+    font-size: 14px; /* Tamanho do texto */
 }
 
 /* Overlay */
 .notification-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9998;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: none; /* Começa escondido */
+    position: fixed; /* Fica fixo na tela */
+    top: 0; /* Topo */
+    left: 0; /* Esquerda */
+    right: 0; /* Direita */
+    bottom: 0; /* Fundo */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro transparente */
+    z-index: 9998; /* Fica atrás do painel */
+    opacity: 0; /* Invisível */
+    transition: opacity 0.3s ease; /* Animação de aparecer */
 }
 
 .notification-overlay.open {
-    display: block;
-    opacity: 1;
+    display: block; /* Mostra o overlay */
+    opacity: 1; /* Torna visível */
 }
 
 /* Responsiveness */
 @media (max-width: 768px) {
     .notification-panel {
-        width: 100%;
-        right: -100%;
+        width: 100%; /* Ocupa toda a largura no celular */
+        right: -100%; /* Esconde completamente fora da tela */
     }
 }
 
 .profile-menu {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza vertical */
+    gap: 5px; /* Espaço entre itens */
+    cursor: pointer; /* Cursor de clique */
 }
 
 .profile-icon {
-    width: 32px;
-    border-radius: 4px;
+    width: 32px; /* Tamanho da imagem de perfil */
+    border-radius: 4px; /* Bordas levemente arredondadas */
 }
 
 /* Sliders */
 .sliders-container {
-    padding: 0 4%;
-    padding-top: 100px;
+    padding: 0 4%; /* Espaço lateral */
+    padding-top: 100px; /* Espaço no topo (por causa da navbar) */
     /* Space for navbar */
-    position: relative;
-    z-index: 3;
-    padding-bottom: 100px;
+    position: relative; /* Permite controle de posição */
+    z-index: 3; /* Camada */
+    padding-bottom: 100px; /* Espaço embaixo */
 }
 
 .slider-section {
-    margin-bottom: 3.5vw;
+    margin-bottom: 3.5vw; /* Espaço entre seções */
 }
 
 .slider-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 12px;
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Espaça título e indicadores */
+    align-items: flex-end; /* Alinha na parte inferior */
+    margin-bottom: 12px; /* Espaço abaixo */
 }
 
 .slider-title {
-    font-size: 1.25vw;
-    font-weight: bold;
-    color: #e5e5e5;
-    line-height: 1.25vw;
+    font-size: 1.25vw; /* Tamanho responsivo */
+    font-weight: bold; /* Negrito */
+    color: #e5e5e5; /* Cor do texto */
+    line-height: 1.25vw; /* Altura da linha */
 }
 
 .slider-indicators {
-    display: flex;
-    gap: 2px;
-    margin-bottom: 4px;
+    display: flex; /* Flexbox */
+    gap: 2px; /* Espaço entre indicadores */
+    margin-bottom: 4px; /* Espaço abaixo */
 }
 
 .slider-indicators div {
-    width: 12px;
-    height: 2px;
-    background-color: #4d4d4d;
+    width: 12px; /* Largura do indicador */
+    height: 2px; /* Altura */
+    background-color: #4d4d4d; /* Cor padrão */
 }
 
 .slider-indicators div.active {
-    background-color: #aaa;
+    background-color: #aaa; /* Cor do indicador ativo */
 }
 
 .movie-row {
-    display: flex;
-    gap: 8px;
+    display: flex; /* Flexbox */
+    gap: 8px; /* Espaço entre cards */
     /* Small gap between movie cards */
-    overflow-x: visible;
+    overflow-x: visible; /* Permite que elementos "saiam" da área */
     /* Let the expanded cards paint outside this box vertically */
-    padding: 10px 4% 50px 4%;
+    padding: 10px 4% 50px 4%; /* Espaçamento interno (baixo maior) */
     /* Added bottom padding to hold the expanding modal */
-    margin: 0 -4%;
+    margin: 0 -4%; /* Ajusta margens laterais */
     /* Pull edges back out so we don't double up padding from container */
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    scroll-behavior: smooth; /* Rolagem suave */
+    -ms-overflow-style: none; /* Remove scrollbar no IE/Edge antigo */
+    scrollbar-width: none; /* Remove scrollbar no Firefox */
 }
 
 .movie-row::-webkit-scrollbar {
-    display: none;
+    display: none; /* Remove scrollbar no Chrome/Safari */
 }
-
 .movie-card {
-    min-width: 250px;
-    width: 250px;
-    height: 140px;
-    background-color: #222;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, border-radius 0.3s 0s, z-index 0s 0.3s, box-shadow 0.3s 0s;
-    position: relative;
-    z-index: 1;
-    transform-origin: center center;
+    min-width: 250px; /* Largura mínima do card */
+    width: 250px; /* Largura fixa */
+    height: 140px; /* Altura do card */
+    background-color: #222; /* Cor de fundo padrão */
+    border-radius: 4px; /* Bordas levemente arredondadas */
+    cursor: pointer; /* Cursor de clique */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s, border-radius 0.3s 0s, z-index 0s 0.3s, box-shadow 0.3s 0s; /* Animações suaves */
+    position: relative; /* Permite posicionamento interno absoluto */
+    z-index: 1; /* Camada padrão */
+    transform-origin: center center; /* Origem da transformação (centro) */
     /* Default origin */
 }
 
 /* Modifiers applied by JavaScript to prevent edge clipping */
 .movie-card.origin-left {
-    transform-origin: left center;
+    transform-origin: left center; /* Expansão começa pela esquerda */
 }
 
 .movie-card.origin-right {
-    transform-origin: right center;
+    transform-origin: right center; /* Expansão começa pela direita */
 }
 
 .movie-card:hover {
-    transform: scale(1.6) translateY(-5%);
+    transform: scale(1.6) translateY(-5%); /* Aumenta o card e sobe um pouco */
     /* Reduced vertical translation since container has more padding */
-    z-index: 99;
-    border-radius: 6px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s, border-radius 0.3s 0.6s, box-shadow 0.3s 0.6s, z-index 0s 0s;
+    z-index: 99; /* Fica acima dos outros */
+    border-radius: 6px; /* Bordas mais arredondadas */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9); /* Sombra forte */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s, border-radius 0.3s 0.6s, box-shadow 0.3s 0.6s, z-index 0s 0s; /* Delay na animação */
 }
 
 .movie-card img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 4px;
-    transition: opacity 0.3s ease, border-radius 0.3s;
-    z-index: 2;
+    position: absolute; /* Posiciona dentro do card */
+    top: 0; /* Topo */
+    left: 0; /* Esquerda */
+    width: 100%; /* Ocupa toda largura */
+    height: 100%; /* Ocupa toda altura */
+    object-fit: cover; /* Ajusta imagem sem distorcer */
+    border-radius: 4px; /* Bordas arredondadas */
+    transition: opacity 0.3s ease, border-radius 0.3s; /* Animações */
+    z-index: 2; /* Fica acima do iframe */
 }
 
 .movie-card iframe {
-    position: absolute;
+    position: absolute; /* Mesmo posicionamento da imagem */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    border-radius: 4px;
-    transition: opacity 0.3s ease, border-radius 0.3s;
-    pointer-events: none;
-    z-index: 1;
+    opacity: 0; /* Invisível inicialmente */
+    border-radius: 4px; /* Bordas */
+    transition: opacity 0.3s ease, border-radius 0.3s; /* Animação */
+    pointer-events: none; /* Não permite interação */
+    z-index: 1; /* Fica atrás da imagem */
 }
 
 .movie-card iframe.playing {
-    opacity: 1;
-    z-index: 3;
-    border-radius: 6px 6px 0 0;
+    opacity: 1; /* Mostra o vídeo */
+    z-index: 3; /* Fica acima de tudo */
+    border-radius: 6px 6px 0 0; /* Arredonda só em cima */
 }
 
 .movie-card:hover img {
-    border-radius: 6px 6px 0 0;
-    transition: border-radius 0s 0.6s;
+    border-radius: 6px 6px 0 0; /* Ajusta borda ao expandir */
+    transition: border-radius 0s 0.6s; /* Delay na mudança */
 }
 
 .movie-card img.playing-video {
-    opacity: 0;
+    opacity: 0; /* Esconde imagem quando vídeo está rodando */
 }
 
 /* Card Details Modal */
 .card-details {
-    position: absolute;
-    top: 100%;
+    position: absolute; /* Fica abaixo do card */
+    top: 100%; /* Começa logo após o card */
     left: 0;
-    width: 100%;
-    background-color: #181818;
-    border-bottom-left-radius: 6px;
+    width: 100%; /* Mesma largura do card */
+    background-color: #181818; /* Fundo escuro */
+    border-bottom-left-radius: 6px; /* Arredondado embaixo */
     border-bottom-right-radius: 6px;
-    padding: 18px 16px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s 0s, visibility 0.3s 0s;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 2;
-    cursor: default;
+    padding: 18px 16px; /* Espaçamento interno */
+    opacity: 0; /* Invisível */
+    visibility: hidden; /* Oculto */
+    transition: opacity 0.3s 0s, visibility 0.3s 0s; /* Animação */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9); /* Sombra */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Organiza em coluna */
+    gap: 12px; /* Espaço entre elementos */
+    z-index: 2; /* Camada */
+    cursor: default; /* Cursor normal */
 }
 
 .movie-card:hover .card-details {
-    opacity: 1;
-    visibility: visible;
-    transition: opacity 0.2s 0.6s, visibility 0s 0.6s;
+    opacity: 1; /* Mostra detalhes */
+    visibility: visible; /* Torna visível */
+    transition: opacity 0.2s 0.6s, visibility 0s 0.6s; /* Delay para aparecer */
 }
 
 .details-buttons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Flexbox */
+    justify-content: space-between; /* Espaço entre lados */
+    align-items: center; /* Centraliza vertical */
 }
 
 .left-buttons,
 .right-buttons {
-    display: flex;
-    gap: 8px;
+    display: flex; /* Flexbox */
+    gap: 8px; /* Espaço entre botões */
 }
 
 .btn-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #2b2b2b;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    color: white;
-    display: flex;
+    width: 32px; /* Largura */
+    height: 32px; /* Altura */
+    border-radius: 50%; /* Redondo */
+    background-color: #2b2b2b; /* Fundo */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borda */
+    color: white; /* Cor do ícone */
+    display: flex; /* Centralização */
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    font-size: 14px;
-    transition: border-color 0.2s, background-color 0.2s;
+    cursor: pointer; /* Cursor de clique */
+    font-size: 14px; /* Tamanho */
+    transition: border-color 0.2s, background-color 0.2s; /* Animação */
 }
 
 .btn-icon:hover {
-    border-color: white;
-    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white; /* Borda branca */
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo mais claro */
 }
 
 .btn-play-icon {
-    background-color: white;
-    color: black;
-    border: none;
+    background-color: white; /* Fundo branco */
+    color: black; /* Ícone preto */
+    border: none; /* Sem borda */
 }
 
 .btn-play-icon:hover {
-    background-color: #e6e6e6;
+    background-color: #e6e6e6; /* Cinza claro no hover */
 }
 
 .btn-play-icon i {
-    margin-left: 2px;
+    margin-left: 2px; /* Pequeno ajuste no ícone */
 }
 
 .details-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 11px;
-    font-weight: bold;
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza vertical */
+    gap: 8px; /* Espaço */
+    font-size: 11px; /* Texto pequeno */
+    font-weight: bold; /* Negrito */
 }
 
 .match-score {
-    color: #46d369;
+    color: #46d369; /* Verde (compatibilidade) */
 }
 
 .age-badge {
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: white;
-    padding: 1px 3px;
-    border-radius: 2px;
-    font-family: Arial, sans-serif;
+    background-color: transparent; /* Fundo transparente */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Borda */
+    color: white; /* Texto */
+    padding: 1px 3px; /* Espaço interno */
+    border-radius: 2px; /* Bordas leves */
+    font-family: Arial, sans-serif; /* Fonte */
 }
 
 .age-badge.red-accent {
-    background-color: #d32f2f;
-    border: none;
-    font-weight: bold;
+    background-color: #d32f2f; /* Fundo vermelho */
+    border: none; /* Sem borda */
+    font-weight: bold; /* Destaque */
 }
 
 .resolution {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 1px 3px;
-    border-radius: 2px;
-    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Borda */
+    padding: 1px 3px; /* Espaço */
+    border-radius: 2px; /* Bordas */
+    color: rgba(255, 255, 255, 0.9); /* Cor */
 }
 
 .duration {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9); /* Cor do tempo */
 }
 
 .details-tags {
-    display: flex;
-    gap: 6px;
-    font-size: 11px;
-    color: rgba(255, 255, 255, 0.9);
-    margin-top: 4px;
+    display: flex; /* Flexbox */
+    gap: 6px; /* Espaço entre tags */
+    font-size: 11px; /* Texto pequeno */
+    color: rgba(255, 255, 255, 0.9); /* Cor */
+    margin-top: 4px; /* Espaço acima */
 }
 
 .details-tags span:not(:last-child)::after {
-    content: "•";
-    color: #666;
-    margin-left: 6px;
+    content: "•"; /* Adiciona bolinha entre tags */
+    color: #666; /* Cor da bolinha */
+    margin-left: 6px; /* Espaço antes da bolinha */
 }
 
-/* Badges */
 .badge-top10 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 22px;
-    height: 28px;
-    background-color: var(--netflix-red);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    z-index: 4;
-    border-bottom-left-radius: 2px;
-    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: absolute; /* Posiciona dentro do card */
+    top: 0; /* No topo */
+    right: 0; /* Na direita */
+    width: 22px; /* Largura */
+    height: 28px; /* Altura */
+    background-color: var(--netflix-red); /* Fundo vermelho */
+    color: white; /* Texto branco */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Organiza em coluna */
+    justify-content: center; /* Centraliza vertical */
+    align-items: center; /* Centraliza horizontal */
+    font-weight: bold; /* Texto em negrito */
+    z-index: 4; /* Fica acima de outros elementos */
+    border-bottom-left-radius: 2px; /* Arredonda canto inferior esquerdo */
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fonte */
 }
 
 .badge-top10 span.top {
-    font-size: 7px;
-    letter-spacing: 0.5px;
-    line-height: 8px;
+    font-size: 7px; /* Texto pequeno */
+    letter-spacing: 0.5px; /* Espaçamento entre letras */
+    line-height: 8px; /* Altura da linha */
 }
 
 .badge-top10 span.number {
-    font-size: 13px;
-    line-height: 13px;
+    font-size: 13px; /* Número maior */
+    line-height: 13px; /* Altura da linha */
 }
 
 .badge-bottom {
-    position: absolute;
-    bottom: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 2px 4px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 2px;
-    z-index: 4;
-    white-space: nowrap;
-    text-transform: uppercase;
+    position: absolute; /* Posiciona no card */
+    bottom: 8px; /* Distância da parte de baixo */
+    left: 50%; /* Centraliza horizontal */
+    transform: translateX(-50%); /* Ajuste fino para centralizar */
+    padding: 2px 4px; /* Espaçamento interno */
+    font-size: 10px; /* Texto pequeno */
+    font-weight: bold; /* Negrito */
+    border-radius: 2px; /* Bordas leves */
+    z-index: 4; /* Camada */
+    white-space: nowrap; /* Impede quebra de linha */
+    text-transform: uppercase; /* Texto em maiúsculo */
 }
 
 .movie-card.has-progress .badge-bottom {
-    bottom: 12px;
+    bottom: 12px; /* Sobe um pouco se tiver barra de progresso */
 }
 
 .badge-bottom.red {
-    background-color: var(--netflix-red);
-    color: white;
+    background-color: var(--netflix-red); /* Fundo vermelho */
+    color: white; /* Texto branco */
 }
 
 .badge-bottom.white {
-    background-color: white;
-    color: black;
+    background-color: white; /* Fundo branco */
+    color: black; /* Texto preto */
 }
 
 /* Progress bar */
 .progress-bar-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background-color: rgba(100, 100, 100, 0.7);
-    z-index: 5;
-    border-bottom-left-radius: 4px;
+    position: absolute; /* Fixa dentro do card */
+    bottom: 0; /* Na base */
+    left: 0; /* Alinhado à esquerda */
+    width: 100%; /* Ocupa toda largura */
+    height: 4px; /* Altura fina */
+    background-color: rgba(100, 100, 100, 0.7); /* Fundo da barra */
+    z-index: 5; /* Fica acima de outros elementos */
+    border-bottom-left-radius: 4px; /* Arredondamento */
     border-bottom-right-radius: 4px;
 }
 
 .progress-value {
-    height: 100%;
-    background-color: var(--netflix-red);
-    border-bottom-left-radius: 4px;
+    height: 100%; /* Mesma altura da barra */
+    background-color: var(--netflix-red); /* Parte preenchida em vermelho */
+    border-bottom-left-radius: 4px; /* Arredondamento */
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .nav-links {
-        display: none;
+        display: none; /* Esconde menu no celular */
     }
 
     .movie-card {
-        min-width: 200px;
+        min-width: 200px; /* Card menor */
         width: 200px;
         height: 112px;
     }
 
     .slider-title {
-        font-size: 4vw;
+        font-size: 4vw; /* Tamanho maior proporcional */
         line-height: 4.5vw;
     }
 }
 
 /* Footer */
 footer {
-    padding: 0 4%;
-    color: #737373;
-    font-size: 13px;
-    margin-bottom: 20px;
+    padding: 0 4%; /* Espaço lateral */
+    color: #737373; /* Cor do texto */
+    font-size: 13px; /* Tamanho */
+    margin-bottom: 20px; /* Espaço abaixo */
 }
 
 .footer-content {
-    max-width: 980px;
-    margin: 0 auto;
+    max-width: 980px; /* Limita largura */
+    margin: 0 auto; /* Centraliza */
 }
 
 .footer-content p {
-    margin-bottom: 30px;
+    margin-bottom: 30px; /* Espaço abaixo dos parágrafos */
 }
 
 .footer-links {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 15px;
+    list-style: none; /* Remove marcadores */
+    display: grid; /* Usa grid */
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas iguais */
+    grid-gap: 15px; /* Espaço entre itens */
 }
 
 .footer-links a {
-    color: #737373;
+    color: #737373; /* Cor dos links */
 }
 
 .footer-links a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Sublinha ao passar mouse */
 }
 
 @media (max-width: 768px) {
     .footer-links {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas no celular */
     }
 }
 
 /* Search functionality */
 .search-container {
-    position: relative;
-    display: flex;
-    align-items: center;
+    position: relative; /* Permite posicionamento interno */
+    display: flex; /* Flexbox */
+    align-items: center; /* Centraliza vertical */
 }
 
 .search-input {
-    width: 0;
-    padding: 0;
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 14px;
-    outline: none;
-    transition: width 0.3s ease;
-    opacity: 0;
+    width: 0; /* Começa fechado */
+    padding: 0; /* Sem espaço interno */
+    border: none; /* Sem borda */
+    background: transparent; /* Fundo transparente */
+    color: white; /* Texto branco */
+    font-size: 14px; /* Tamanho */
+    outline: none; /* Remove contorno */
+    transition: width 0.3s ease; /* Anima expansão */
+    opacity: 0; /* Invisível */
 }
 
 .search-input.active {
-    width: 200px;
-    padding: 8px 12px;
-    border: 1px solid #333;
-    background: rgba(0, 0, 0, 0.8);
-    opacity: 1;
-    margin-right: 10px;
+    width: 200px; /* Expande */
+    padding: 8px 12px; /* Espaço interno */
+    border: 1px solid #333; /* Borda */
+    background: rgba(0, 0, 0, 0.8); /* Fundo escuro */
+    opacity: 1; /* Visível */
+    margin-right: 10px; /* Espaço do ícone */
 }
 
 .search-icon {
-    cursor: pointer;
-    transition: color 0.3s;
+    cursor: pointer; /* Cursor de clique */
+    transition: color 0.3s; /* Animação */
 }
 
 .search-icon:hover {
-    color: #b3b3b3;
+    color: #b3b3b3; /* Muda cor no hover */
 }
 
 /* Page Title */
 .page-title {
-    margin-bottom: 40px;
-    padding-top: 20px;
+    margin-bottom: 40px; /* Espaço abaixo */
+    padding-top: 20px; /* Espaço acima */
 }
 
 .page-title h1 {
-    font-size: 3vw;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #e5e5e5;
+    font-size: 3vw; /* Tamanho responsivo */
+    font-weight: bold; /* Negrito */
+    margin-bottom: 10px; /* Espaço abaixo */
+    color: #e5e5e5; /* Cor */
 }
 
 .content-count {
-    font-size: 14px;
-    color: #b3b3b3;
+    font-size: 14px; /* Tamanho */
+    color: #b3b3b3; /* Cor */
 }
 
 /* Notification */
 .notification {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--netflix-red);
-    color: white;
-    padding: 16px 24px;
-    border-radius: 4px;
-    z-index: 10000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    font-weight: 500;
+    position: fixed; /* Fixo na tela */
+    bottom: 20px; /* Distância da base */
+    right: 20px; /* Distância da direita */
+    background-color: var(--netflix-red); /* Fundo vermelho */
+    color: white; /* Texto branco */
+    padding: 16px 24px; /* Espaçamento interno */
+    border-radius: 4px; /* Bordas */
+    z-index: 10000; /* Fica acima de tudo */
+    opacity: 0; /* Invisível */
+    transition: opacity 0.3s ease; /* Animação */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Sombra */
+    font-weight: 500; /* Peso médio */
 }
 
 .notification.show {
-    opacity: 1;
+    opacity: 1; /* Mostra notificação */
 }
 
 /* Added to list button state */
 .btn-icon.added-to-list {
-    color: var(--netflix-red);
+    color: var(--netflix-red); /* Muda cor quando item foi adicionado */
 }
 
-/* Empty list message */
+
 .empty-list-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-    text-align: center;
-    margin-top: 80px;
+    display: flex; /* Usa flexbox */
+    flex-direction: column; /* Organiza em coluna */
+    align-items: center; /* Centraliza horizontal */
+    justify-content: center; /* Centraliza vertical */
+    min-height: 400px; /* Altura mínima */
+    text-align: center; /* Centraliza texto */
+    margin-top: 80px; /* Espaço acima */
 }
 
 .empty-list-message i {
-    font-size: 80px;
-    color: #404040;
-    margin-bottom: 24px;
-    opacity: 0.7;
+    font-size: 80px; /* Tamanho grande do ícone */
+    color: #404040; /* Cor cinza escuro */
+    margin-bottom: 24px; /* Espaço abaixo */
+    opacity: 0.7; /* Deixa meio transparente */
 }
 
 .empty-list-message p {
-    font-size: 24px;
-    color: #b3b3b3;
-    margin-bottom: 32px;
+    font-size: 24px; /* Texto maior */
+    color: #b3b3b3; /* Cor cinza */
+    margin-bottom: 32px; /* Espaço abaixo */
 }
 
 .btn-explore {
-    display: inline-block;
-    background-color: var(--netflix-red);
-    color: white;
-    padding: 12px 32px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease;
+    display: inline-block; /* Permite padding e tamanho */
+    background-color: var(--netflix-red); /* Fundo vermelho */
+    color: white; /* Texto branco */
+    padding: 12px 32px; /* Espaçamento interno */
+    border-radius: 4px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove sublinhado */
+    font-weight: 500; /* Peso médio */
+    transition: background-color 0.3s ease; /* Animação */
 }
 
 .btn-explore:hover {
-    background-color: #c4080c;
+    background-color: #c4080c; /* Vermelho mais escuro no hover */
 }
 
 /* No results message */
 .no-results {
-    text-align: center;
-    color: #b3b3b3;
-    font-size: 16px;
-    padding: 40px 20px;
-    grid-column: 1 / -1;
+    text-align: center; /* Centraliza texto */
+    color: #b3b3b3; /* Cor cinza */
+    font-size: 16px; /* Tamanho */
+    padding: 40px 20px; /* Espaçamento interno */
+    grid-column: 1 / -1; /* Ocupa todas as colunas do grid */
 }
 
 /* Content Grid */
 .content-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 16px;
-    padding: 0;
-    margin: 0;
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cria colunas automáticas responsivas */
+    gap: 16px; /* Espaço entre os itens */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margem */
 }
 
 .content-grid .grid-card {
-    min-width: unset;
-    width: 100%;
-    height: 140px;
-    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-    transform-origin: center center;
+    min-width: unset; /* Remove largura mínima herdada */
+    width: 100%; /* Ocupa toda largura da coluna */
+    height: 140px; /* Altura fixa */
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s; /* Animação */
+    transform-origin: center center; /* Origem da transformação */
 }
 
 .content-grid .grid-card:hover {
-    transform: scale(1.1);
-    z-index: 99;
+    transform: scale(1.1); /* Aumenta levemente no hover */
+    z-index: 99; /* Fica acima dos outros */
 }
 
 @media (max-width: 1400px) {
     .content-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas menores em telas médias */
     }
 }
 
 @media (max-width: 768px) {
     .page-title h1 {
-        font-size: 8vw;
+        font-size: 8vw; /* Título maior no celular */
     }
 
     .content-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Colunas ainda menores */
+        gap: 12px; /* Espaço reduzido */
     }
 
     .content-grid .grid-card {
-        height: 84px;
+        height: 84px; /* Altura menor no celular */
     }
 }
