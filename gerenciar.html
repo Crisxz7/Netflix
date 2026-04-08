@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Gerenciar perfis</title>
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+    <div class="manage-container">
+        <header class="manage-header"> 
+            <h1>Gerenciar perfis</h1> 
+            <button type="button" class="back-button" id="back-home">Voltar</button> <!-- Botão para voltar à página inicial -->
+        </header> 
+
+        <p>Altere o nome e a foto de cada perfil. As mudanças são salvas automaticamente.</p> <!-- Instrução para o usuário -->
+
+        <section class="profile-cards" id="manage-list"></section> <!-- Seção onde os cards de perfil serão renderizados -->
+
+        <p class="status-message" id="status-message"></p> <!-- Elemento para exibir mensagens de status -->
+    </div> <!-- Fim do container principal -->
+
+    <script src="theme.js"></script> <!-- Carrega o script de tema -->
+    <script src="js/gerenciar.js"></script> <!-- Carrega o script de gerenciamento de perfis -->
+</body> <!-- Fim do corpo -->
+</html> <!-- Fim do documento HTML -->

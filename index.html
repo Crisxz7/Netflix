@@ -1,58 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html> 
+<html lang="pt-br"> 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Netflix</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> 
 </head>
-<body>
-    <header>
-        <h1>Quem está assistindo?</h1>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar modo claro/escuro" title="Alternar tema">🌙</button>
-    </header>
+<body> 
 
-    <main>
-        <section aria-label="Perfis disponíveis">
-            <ul class="profiles" aria-label="Lista de perfis">
-                <li class="profile-item">
-                    <a href="catalogo/catalogo.html" aria-label="Perfil de Vanessa, clique para acessar">
-                    <figure>
-                        <img src="assents/perfil-1.jpg" alt="Uma mulher de cabelos longos e um vestido antigo.">
-                        <figcaption>Vanessa</figcaption>
-                    </figure>
-                </li>
-                <li class="profile-item">
-                    <a href="catalogo/catalogo.html" aria-label="Perfil de Thiago, clique para acessar">
-                    <figure>
-                        <img src="assents/perfil-2.jpg" alt="Um homem de cabelos curtos e barba, com um terno elegante antigo.">
-                        <figcaption>Thiago</figcaption>
-                    </figure>
-                </li>
-                <li class="profile-item">
-                    <a href="catalogo/catalogo.html" aria-label="Perfil de Ana, clique para acessar">
-                    <figure>
-                        <img src="assents/perfil-3.jpg" alt="Uma mulher de tranças e um vestido antigo.">
-                        <figcaption>Ana</figcaption>
-                    </figure>
-                </li>
-                <li class="profile-item">
-                    <a href="catalogo/catalogo.html" aria-label="Perfil de Vitória, clique para acessar">
-                    <figure>
-                        <img src="assents/perfil-4.jpg" alt="Uma senhora de cabelos brancos e um vestido antigo.">
-                        <figcaption>Vitória</figcaption>
-                    </figure>
-                </li>
-            </ul>
+    <!-- INTRO COM VÍDEO --> <!-- Seção de introdução com vídeo -->
+    <div id="intro"> <!-- Container para o vídeo de introdução -->
+        <video id="videoIntro" autoplay muted playsinline> <!-- Elemento de vídeo que inicia automaticamente, mudo e inline -->
+            <source src="assents/intro-netflix.mp4" type="video/mp4"> <!-- Fonte do vídeo em MP4 -->
+            Seu navegador não suporta vídeo. <!-- Mensagem de fallback para navegadores sem suporte -->
+        </video> <!-- Fim do elemento de vídeo -->
+    </div> <!-- Fim do container de introdução -->
 
-        </section>
-        <section class="gerenciar">
-            <button type="button" class="botao-gerenciar">Gerenciar perfis</button>
-        </section>
+    <header> <!-- Início do cabeçalho da página -->
+        <h1>Quem está assistindo?</h1> <!-- Título principal perguntando quem está assistindo -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar modo claro/escuro" title="Alternar tema">🌙</button> <!-- Botão para alternar tema, com acessibilidade -->
+    </header> <!-- Fim do cabeçalho -->
 
-    </main>
+    <main> <!-- Início do conteúdo principal -->
+        <section aria-label="Perfis disponíveis"> <!-- Seção de perfis com rótulo de acessibilidade -->
+            <ul class="profiles" aria-label="Lista de perfis"> <!-- Lista não ordenada de perfis -->
+                <li class="profile-item" data-profile-id="1"> <!-- Item de perfil com ID de dados para identificação -->
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Vanessa, clique para acessar"> <!-- Link para o catálogo com rótulo de acessibilidade -->
+                        <figure> <!-- Figura para agrupar imagem e legenda -->
+                            <img src="assents/perfil-1.jpg" alt="Uma mulher de cabelos longos e um vestido antigo."> <!-- Imagem do perfil com descrição alternativa -->
+                            <figcaption>Vanessa</figcaption> <!-- Legenda com o nome do perfil -->
+                        </figure> <!-- Fim da figura -->
+                    </a> <!-- Fim do link -->
+                </li> <!-- Fim do item de perfil -->
 
-    <script src="theme.js"></script>
-    <script src="js/index.js"></script>
-</body>
-</html>
+                <li class="profile-item" data-profile-id="2"> <!-- Item de perfil para Thiago -->
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Thiago, clique para acessar"> <!-- Link para o catálogo -->
+                        <figure> <!-- Figura para imagem e legenda -->
+                            <img src="assents/perfil-2.jpg" alt="Um homem de cabelos curtos e barba, com um terno elegante antigo."> <!-- Imagem do perfil -->
+                            <figcaption>Thiago</figcaption> <!-- Legenda com nome -->
+                        </figure> <!-- Fim da figura -->
+                    </a> <!-- Fim do link -->
+                </li> <!-- Fim do item -->
+
+                <li class="profile-item" data-profile-id="3"> <!-- Item de perfil para Ana -->
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Ana, clique para acessar"> <!-- Link para catálogo -->
+                        <figure> <!-- Figura -->
+                            <img src="assents/perfil-3.jpg" alt="Uma mulher de tranças e um vestido antigo."> <!-- Imagem -->
+                            <figcaption>Ana</figcaption> <!-- Legenda -->
+                        </figure> <!-- Fim da figura -->
+                    </a> <!-- Fim do link -->
+                </li> <!-- Fim do item -->
+
+                <li class="profile-item" data-profile-id="4"> <!-- Item de perfil para Vitória -->
+                    <a href="catalogo/catalogo.html" aria-label="Perfil de Vitória, clique para acessar"> <!-- Link -->
+                        <figure> <!-- Figura -->
+                            <img src="assents/perfil-4.jpg" alt="Uma senhora de cabelos brancos e um vestido antigo."> <!-- Imagem -->
+                            <figcaption>Vitória</figcaption> <!-- Legenda -->
+                        </figure> <!-- Fim da figura -->
+                    </a> <!-- Fim do link -->
+                </li> <!-- Fim do item -->
+            </ul> <!-- Fim da lista de perfis -->
+        </section> <!-- Fim da seção de perfis -->
+
+        <section class="gerenciar"> <!-- Seção para gerenciar perfis -->
+            <button type="button" class="botao-gerenciar" id="manage-profiles">Gerenciar perfis</button> <!-- Botão para acessar gerenciamento -->
+        </section> <!-- Fim da seção de gerenciamento -->
+    </main> <!-- Fim do conteúdo principal -->
+
+    <script src="theme.js"></script> <!-- Carrega o script para tema -->
+    <script src="js/index.js"></script> <!-- Carrega o script principal da página -->
+
+</body> 
+</html> 

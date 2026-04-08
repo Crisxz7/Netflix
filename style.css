@@ -124,25 +124,142 @@ h1 {
 }
 
 /* Seção gerenciar perfis */
-.gerenciar {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+.gerenciar { /* Container para a seção de gerenciamento */
+    display: flex; /* Usa flexbox para layout */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    margin-top: 20px; /* Margem superior para espaçamento */
 }
 
-.botao-gerenciar {
-    background: transparent;
-    border: 1px solid #ccc;
-    color: white;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+.botao-gerenciar { /* Estilo do botão de gerenciar perfis */
+    background: transparent; /* Fundo transparente */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    color: white; /* Texto branco */
+    padding: 10px 20px; /* Preenchimento interno */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para hover */
 }
 
-.botao-gerenciar:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+.botao-gerenciar:hover { /* Estilo ao passar o mouse */
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+}
+
+.manage-container { /* Container principal da página de gerenciamento */
+    max-width: 1100px; /* Largura máxima */
+    width: 100%; /* Largura total */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 24px 20px; /* Preenchimento interno */
+}
+
+.manage-header { /* Cabeçalho da página de gerenciamento */
+    display: flex; /* Flexbox para layout */
+    align-items: center; /* Alinha itens ao centro verticalmente */
+    justify-content: space-between; /* Espaça itens entre si */
+    flex-wrap: wrap; /* Permite quebra de linha */
+    gap: 16px; /* Espaço entre itens */
+    margin-bottom: 18px; /* Margem inferior */
+}
+
+.manage-header h1 { /* Título no cabeçalho */
+    font-size: 2rem; /* Tamanho da fonte */
+}
+
+.back-button { /* Botão de voltar */
+    background: transparent; /* Fundo transparente */
+    border: 1px solid #ccc; /* Borda cinza */
+    color: white; /* Texto branco */
+    padding: 10px 18px; /* Preenchimento */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro */
+    border-radius: 6px; /* Bordas arredondadas */
+    transition: background-color 0.25s ease; /* Transição suave */
+}
+
+.back-button:hover { /* Hover do botão voltar */
+    background: rgba(255, 255, 255, 0.12); /* Fundo semi-transparente */
+}
+
+.profile-cards { /* Container para os cards de perfil */
+    display: grid; /* Usa grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Colunas responsivas */
+    gap: 18px; /* Espaço entre cards */
+}
+
+.profile-card { /* Estilo de cada card de perfil */
+    background: rgba(255, 255, 255, 0.05); /* Fundo semi-transparente */
+    border: 1px solid rgba(255, 255, 255, 0.12); /* Borda sutil */
+    border-radius: 18px; /* Bordas arredondadas */
+    padding: 20px; /* Preenchimento interno */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Direção coluna */
+    align-items: center; /* Alinha ao centro */
+    gap: 14px; /* Espaço entre elementos */
+}
+
+.profile-card img.profile-avatar { /* Imagem do avatar no card */
+    width: 120px; /* Largura */
+    height: 120px; /* Altura */
+    object-fit: cover; /* Ajusta a imagem */
+    border-radius: 999px; /* Forma circular */
+    border: 1px solid rgba(255, 255, 255, 0.16); /* Borda sutil */
+}
+
+.profile-card label { /* Rótulo para o input de nome */
+    width: 100%; /* Largura total */
+    font-size: 0.95rem; /* Tamanho da fonte */
+    color: #ccc; /* Cor cinza */
+    text-align: left; /* Alinhamento à esquerda */
+}
+
+.profile-name-input { /* Campo de input para nome */
+    width: 100%; /* Largura total */
+    padding: 12px 14px; /* Preenchimento */
+    border-radius: 12px; /* Bordas arredondadas */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Borda sutil */
+    background: rgba(0, 0, 0, 0.28); /* Fundo escuro */
+    color: white; /* Texto branco */
+}
+
+.profile-name-input:focus { /* Foco no input */
+    outline: none; /* Remove outline padrão */
+    border-color: #ffffff; /* Borda branca */
+    background: rgba(255, 255, 255, 0.08); /* Fundo claro */
+}
+
+.avatar-options { /* Container para opções de avatar */
+    display: flex; /* Flexbox */
+    flex-wrap: wrap; /* Permite quebra */
+    gap: 10px; /* Espaço entre botões */
+    justify-content: center; /* Centraliza */
+    width: 100%; /* Largura total */
+}
+
+.avatar-choice { /* Botão de escolha de avatar */
+    width: 56px; /* Largura */
+    height: 56px; /* Altura */
+    border-radius: 50%; /* Forma circular */
+    border: 2px solid transparent; /* Borda invisível */
+    background-size: cover; /* Cobre o fundo */
+    background-position: center; /* Centraliza imagem */
+    cursor: pointer; /* Cursor de ponteiro */
+    transition: transform 0.2s ease, border-color 0.2s ease; /* Transições */
+}
+
+.avatar-choice:hover { /* Hover no botão de avatar */
+    transform: scale(1.05); /* Aumenta ligeiramente */
+}
+
+.avatar-choice.selected { /* Classe para avatar selecionado */
+    border-color: #ffffff; /* Borda branca */
+}
+
+.status-message { /* Mensagem de status */
+    margin-top: 14px; /* Margem superior */
+    font-size: 0.95rem; /* Tamanho da fonte */
+    color: #8bc34a; /* Cor verde */
+    min-height: 1.2em; /* Altura mínima */
+    text-align: center; /* Centraliza texto */
 }
 
 @media (max-width: 480px) {
@@ -235,4 +352,43 @@ html[data-theme="dark"] .profile-item figcaption {
 
 html[data-theme="dark"] .profile-item:hover img {
     border-color: white !important; /* Borda branca no hover */
+}
+
+/* INTRO COM VÍDEO */
+#intro {
+    position: fixed; /* Fixa na tela */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda largura */
+    height: 100%; /* Ocupa toda altura */
+    background: black; /* Fundo preto estilo Netflix */
+    display: flex; /* Centraliza o vídeo */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* Fica acima de tudo */
+}
+
+/* VÍDEO EM TELA CHEIA */
+#intro video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz o vídeo cobrir a tela */
+}
+
+/* ANIMAÇÃO PARA SUMIR AUTOMÁTICO (sem JS) */
+#intro {
+    animation: esconderIntro 4s forwards; /* tempo = duração do vídeo */
+}
+
+@keyframes esconderIntro {
+    0% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
 }
