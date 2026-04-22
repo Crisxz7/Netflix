@@ -10,17 +10,19 @@
     <div class="manage-container">
         <header class="manage-header"> 
             <h1>Gerenciar perfis</h1> 
-            <button type="button" class="back-button" id="back-home">Voltar</button> <!-- Botão para voltar à página inicial -->
+            <button type="button" class="back-button" id="back-home">Voltar</button>
         </header> 
 
-        <p>Altere o nome e a foto de cada perfil. As mudanças são salvas automaticamente.</p> <!-- Instrução para o usuário -->
+        <p>Altere o nome e a foto de cada perfil. As mudanças são salvas automaticamente.</p>
 
-        <section class="profile-cards" id="manage-list"></section> <!-- Seção onde os cards de perfil serão renderizados -->
+        <!-- Os cards de perfil editáveis são gerados dinamicamente pelo gerenciar.js -->
+        <section class="profile-cards" id="manage-list"></section>
 
-        <p class="status-message" id="status-message"></p> <!-- Elemento para exibir mensagens de status -->
-    </div> <!-- Fim do container principal -->
+        <!-- Exibe mensagens de feedback ao usuário, como "Nome atualizado!" -->
+        <p class="status-message" id="status-message"></p>
+    </div>
 
-    <script src="theme.js"></script> <!-- Carrega o script de tema -->
-    <script src="js/gerenciar.js"></script> <!-- Carrega o script de gerenciamento de perfis -->
-</body> <!-- Fim do corpo -->
-</html> <!-- Fim do documento HTML -->
+    <script src="theme.js"></script>
+    <script src="js/gerenciar.js"></script>
+</body>
+</html>

@@ -11,12 +11,11 @@
 </head>
 
 <body>
-   
+
     <header class="navbar" id="navbar">
         <div class="navbar-left">
             <a href="catalogo.html" aria-label="Ir para Início">
-                <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-                    alt="Netflix">
+                <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix">
             </a>
             <nav>
                 <ul class="nav-links">
@@ -33,29 +32,30 @@
                 <input type="text" id="search-input" class="search-input" placeholder="Buscar filmes...">
                 <i class="fas fa-search icon search-icon" id="search-icon"></i>
             </div>
+            <!-- Exibe o nome do perfil ativo; atualizado dinamicamente pelo filmes.js -->
             <a href="../index.html" class="kids-link">Seu nome</a>
             <div class="nav-notification">
                 <i class="fas fa-bell icon" id="notification-bell"></i>
                 <span class="notification-badge"></span>
             </div>
             <a href="../index.html" class="profile-menu" style="text-decoration: none; color: inherit;">
-                <img class="profile-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-                    alt="Profile">
+                <img class="profile-icon" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile">
                 <i class="fas fa-caret-down icon" style="font-size: 14px; margin-left: 5px;"></i>
             </a>
         </div>
     </header>
 
-
     <main class="sliders-container" id="main-content">
         <div class="page-title">
             <h1>Filmes</h1>
+            <!-- Contador atualizado pelo filmes.js com o total de filmes encontrados -->
             <p class="content-count">Mostrando <span id="film-count">0</span> filmes</p>
         </div>
+        <!-- Grid onde os cards de filmes são injetados pelo filmes.js -->
         <div id="films-grid" class="content-grid"></div>
     </main>
 
-  
+    <!-- Painel lateral de notificações/atividades recentes -->
     <div id="notification-panel" class="notification-panel">
         <div class="notification-panel-header">
             <h3>Atividades Recentes</h3>
@@ -68,7 +68,7 @@
         </div>
     </div>
 
-
+    <!-- Escurece o fundo quando o painel de notificações está aberto -->
     <div id="notification-overlay" class="notification-overlay"></div>
 
     <script type="module" src="./js/filmes.js"></script>
